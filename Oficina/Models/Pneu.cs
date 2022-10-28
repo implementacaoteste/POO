@@ -66,7 +66,7 @@
         {
             if (Furado || Estourado)
                 return;
-            
+
             Rotacao += _rotacao;
             GastarBorracha(_rotacao / 100.0);
         }
@@ -96,7 +96,7 @@
             Estourado = true;
             Psi = 0;
             PercentualBorracha = 0;
-            Rotacao= 0;
+            Rotacao = 0;
         }
         public void Exibir()
         {

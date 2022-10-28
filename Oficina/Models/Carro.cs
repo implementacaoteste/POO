@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Models
+﻿namespace Models
 {
     public class Carro
     {
@@ -26,7 +20,13 @@ namespace Models
         public Pneu PneuTrazeiroEsquerdo
         {
             get { return pneuTrazeiroEsquerdo; }
-            set { pneuTrazeiroEsquerdo = value; }
+            set
+            {
+                if (VelocidadeAtual == 0)
+                    pneuTrazeiroEsquerdo = value;
+                else
+                    Console.WriteLine("TU VAI TROCAR O PNEU COM O CARRO EM MOVIMENTO?");
+            }
         }
         public Pneu PneuDianteiroDireito
         {
@@ -105,11 +105,14 @@ namespace Models
             GastarCombustivel(_impulso / 100.0);
             if (Ligado)
             {
+                VelocidadeAtual += _impulso;
                 PneuDianteiroDireito.Girar(_impulso);
                 PneuDianteiroEsquerdo.Girar(_impulso);
                 PneuTrazeiroDireito.Girar(_impulso);
                 PneuTrazeiroEsquerdo.Girar(_impulso);
-                VelocidadeAtual += _impulso;
+
+                if (PneuDianteiroDireito.Estourado || PneuDianteiroEsquerdo.Estourado || PneuTrazeiroDireito.Estourado || pneuTrazeiroEsquerdo.Estourado)
+                    Frear(VelocidadeAtual);
             }
         }
         public void Frear(int _abatimento)
@@ -146,7 +149,6 @@ namespace Models
             Console.WriteLine("Pneu trazeiro direito: ");
             PneuTrazeiroDireito.Exibir();
         }
-
         public void Abastecer(double _quantidade)
         {
             Tanque += _quantidade;
