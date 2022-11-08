@@ -1,5 +1,6 @@
 ﻿using Models;
 using DAL;
+using System.Data;
 
 namespace BLL
 {
@@ -26,7 +27,7 @@ namespace BLL
             EleitorDAL eleitorDAL = new EleitorDAL();
             eleitorDAL.Alterar(_eleitor);
         }
-        public List<Eleitor> Buscar(string _titulo)
+        public DataTable Buscar(string _titulo)
         {
             EleitorDAL eleitorDAL = new EleitorDAL();
             return eleitorDAL.Buscar(_titulo);
