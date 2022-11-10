@@ -27,10 +27,10 @@ namespace BLL
             EleitorDAL eleitorDAL = new EleitorDAL();
             eleitorDAL.Alterar(_eleitor);
         }
-        public DataTable Buscar(string _titulo)
+        public DataTable BuscarPorTitulo(string _titulo)
         {
             EleitorDAL eleitorDAL = new EleitorDAL();
-            return eleitorDAL.Buscar(_titulo);
+            return eleitorDAL.BuscarPorTitulo(_titulo);
         }
     }
 }
