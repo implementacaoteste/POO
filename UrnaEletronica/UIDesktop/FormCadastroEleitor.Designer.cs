@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +59,11 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 27);
             this.textBox1.TabIndex = 1;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.AllowNew = true;
+            this.bindingSource1.DataSource = typeof(Models.Eleitor);
             // 
             // textBox2
             // 
@@ -122,10 +127,6 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Sair";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(Models.Eleitor);
             // 
             // FormCadastroEleitor
             // 
