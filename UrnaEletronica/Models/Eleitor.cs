@@ -28,6 +28,11 @@
 			get { return votou; }
 			set { votou = value; }
 		}
+		public Eleitor()
+		{
+
+		}
+		
 		public Eleitor(string _titulo, string _nome, int _id)
 		{
 			Titulo = _titulo;

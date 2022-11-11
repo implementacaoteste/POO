@@ -13,10 +13,11 @@ namespace DAL
 
             try
             {
-                cmd.CommandText = "INSERT INTO Eleitor(Titulo, Nome) VALUES(@Titulo, @Nome)";
+                cmd.CommandText = "INSERT INTO Eleitor(Titulo, Nome, Votou) VALUES(@Titulo, @Nome, @Votou)";
                 //cmd.CommandText = "SP_InserirEleitor";
                 cmd.Parameters.AddWithValue("@Titulo", _eleitor.Titulo);
                 cmd.Parameters.AddWithValue("@Nome", _eleitor.Nome);
+                cmd.Parameters.AddWithValue("@Votou", _eleitor.Votou);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandType = CommandType.Text;
 
