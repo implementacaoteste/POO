@@ -9,7 +9,6 @@ namespace UITerminalWindows
         {
             InitializeComponent();
         }
-
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             bindingSourceEleitor.EndEdit();
@@ -20,14 +19,12 @@ namespace UITerminalWindows
             MessageBox.Show("Eleitor salvo com sucesso!");
             Close();
         }
-
         private void FormCadastroEleitor_Load(object sender, EventArgs e)
         {
             Eleitor eleitor = new Eleitor();
             bindingSourceEleitor.DataSource = eleitor;
             bindingSourceEleitor.AddNew();
         }
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Close();

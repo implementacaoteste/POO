@@ -11,7 +11,7 @@ internal class Program
             Eleitor eleitor = new Eleitor("9999", "Teste 2", 3);
             EleitorBLL eleitorBLL = new EleitorBLL();
             
-            DataTable dataTable = eleitorBLL.Buscar("555555");
+            DataTable dataTable = eleitorBLL.BuscarPorTitulo("555555");
 
             eleitorBLL.Inserir(eleitor);
             eleitor.Nome = "Mazarope";

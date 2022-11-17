@@ -14,11 +14,9 @@ namespace DAL
             try
             {
                 cmd.CommandText = "INSERT INTO Eleitor(Titulo, Nome, Votou) VALUES(@Titulo, @Nome, @Votou)";
-                //cmd.CommandText = "SP_InserirEleitor";
                 cmd.Parameters.AddWithValue("@Titulo", _eleitor.Titulo);
                 cmd.Parameters.AddWithValue("@Nome", _eleitor.Nome);
                 cmd.Parameters.AddWithValue("@Votou", _eleitor.Votou);
-                //cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandType = CommandType.Text;
 
                 cn.Open();
@@ -66,7 +64,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public DataTable Buscar(string _titulo)
+        public DataTable BuscarPorTitulo(string _titulo)
         {
             SqlDataAdapter da = new SqlDataAdapter();
             DataTable dt = new DataTable();
@@ -74,9 +72,9 @@ namespace DAL
             try
             {
                 da.SelectCommand = cn.CreateCommand();
-                da.SelectCommand.CommandText = "SELECT Id, Nome, Titulo, Votou FROM Eleitor WHERE Titulo = @Titulo";
+                da.SelectCommand.CommandText = "SELECT Id, Nome, Titulo, Votou FROM Eleitor WHERE Titulo LIKE @Titulo";
                 da.SelectCommand.CommandType = CommandType.Text;
-                da.SelectCommand.Parameters.AddWithValue("@Titulo", _titulo);
+                da.SelectCommand.Parameters.AddWithValue("@Titulo", "%" + _titulo + "%");
                 cn.Open();
                 da.Fill(dt);
                 return dt;
