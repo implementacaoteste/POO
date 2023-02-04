@@ -6,9 +6,9 @@ namespace ConsoleAppPrincipal
     {
         static void Main(string[] args)
         {
-            Pneu pneu1 = new Pneu(16, 150, "Carro de passeio", false);
-            Pneu pneu2 = new Pneu(16, 70, "Pneu de estepe",true);
-            
+            Pneu pneu1 = new Pneu(16, 150, "Carro de passeio");
+            Pneu pneu2 = new Pneu(16, 70, "Pneu de estepe", true);
+
             pneu1.Girar(6);
             pneu2.Girar(6);
             pneu2.Girar(15);
