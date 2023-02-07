@@ -1,7 +1,4 @@
-﻿using System.Reflection.PortableExecutable;
-using System.Text;
-
-namespace Models
+﻿namespace Models
 {
     public class Pneu
     {
@@ -12,7 +9,7 @@ namespace Models
         public int PercentualBorracha { get; set; }
         public bool Estourado { get; set; }
         public int VelocidadeMaxima { get; set; }
-        public int VelocidadeAtual { get; set; }
+        public int VelocidadeAtual { private get; set; }
         public bool Estepe { get; set; }
 
         public Pneu(int _aro, int _velocidadeMaxima, string _tipo, bool _estepe = false)
@@ -52,14 +49,10 @@ namespace Models
             PercentualBorracha = PercentualBorracha - 5;
 
             if (PercentualBorracha <= 30)
-            {
                 EstourarPneu();
-            }
 
             if (VelocidadeAtual < 0)
-            {
                 VelocidadeAtual = 0;
-            }
         }
 
         public void Exibir()
