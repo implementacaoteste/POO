@@ -25,24 +25,19 @@
             Cor = "Preto";
             PercentualBorracha = 100;
         }
-
         public void Girar(int _velocidade)
         {
             VelocidadeAtual = VelocidadeAtual + _velocidade;
             PercentualBorracha = PercentualBorracha - 3;
 
             if (VelocidadeAtual > VelocidadeMaxima || PercentualBorracha <= 30)
-            {
                 EstourarPneu();
-            }
         }
-
         public void EstourarPneu()
         {
             Estourado = true;
             VelocidadeAtual = 0;
         }
-
         public void Frear(int _reducao)
         {
             VelocidadeAtual = VelocidadeAtual - _reducao;
@@ -54,7 +49,6 @@
             if (VelocidadeAtual < 0)
                 VelocidadeAtual = 0;
         }
-
         public void Exibir()
         {
             Console.WriteLine("Aro: " + Aro);

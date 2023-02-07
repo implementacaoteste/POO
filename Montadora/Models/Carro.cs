@@ -27,7 +27,7 @@
             Odometro = 0;
             Ligado = false;
             PercentualCombustivel = 0;
-            
+
             PneuDianteiroDireito = new Pneu(16, 150, "Carro de passeio");
             PneuDianteiroEsquerdo = new Pneu(16, 150, "Carro de passeio");
             PneuTraseiroDireito = new Pneu(16, 150, "Carro de passeio");
@@ -38,8 +38,9 @@
         {
             if (PercentualCombustivel > 0)
             {
-                PercentualCombustivel = PercentualCombustivel - 3;
+                PercentualCombustivel -= 3;
                 Ligado = true;
+
                 if (PercentualCombustivel <= 0)
                 {
                     PercentualCombustivel = 0;
@@ -78,7 +79,6 @@
                 }
             }
         }
-
         private void Parar()
         {
             VelocidadeAtual = 0;
@@ -87,10 +87,9 @@
             PneuTraseiroDireito.VelocidadeAtual = 0;
             PneuTraseiroEsquerdo.VelocidadeAtual = 0;
         }
-
         public void Frear(int _reduzir)
         {
-            VelocidadeAtual = VelocidadeAtual - _reduzir;
+            VelocidadeAtual -= _reduzir;
 
             if (VelocidadeAtual < 0)
                 VelocidadeAtual = 0;
@@ -118,10 +117,8 @@
                 return;
             }
 
-            if (PercentualCombustivel < 100)
-                PercentualCombustivel = PercentualCombustivel + _quantidadeCombustivel;
+            PercentualCombustivel += _quantidadeCombustivel;
         }
-
         public void Exibir()
         {
             Console.Clear();
